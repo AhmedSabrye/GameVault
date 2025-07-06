@@ -14,6 +14,10 @@ Discover and explore the best free-to-play games, beautifully organized and easy
 
 ## Images
 
+| Home Page                       | Game Details Page                      | Game List (Grid) Page                   |
+| ------------------------------- | -------------------------------------- | --------------------------------------- |
+| ![Home Page](./public/home.png) | ![Game Details](./public/details1.png) | ![Game List](./public/details2.png.png) |
+
 ## Tech Stack
 
 - React + TypeScript
