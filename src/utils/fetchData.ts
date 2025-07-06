@@ -18,6 +18,20 @@ export interface Game {
   release_date: string;
 }
 
+export interface GameDetail extends Game {
+  description: string;
+  minimum_system_requirements: {
+    os: string;
+    processor: string;
+    memory: string;
+    graphics: string;
+    storage: string;
+  };
+  screenshots: {
+    id: number;
+    image: string;
+  }[];
+}
 
 export const fetchGames = async (
   category: string = "all",
@@ -33,6 +47,16 @@ export const fetchGames = async (
 
   if (!response.ok) {
     throw new Error("Failed to fetch games");
+  }
+
+  return response.json();
+};
+
+export const fetchGameDetails = async (id: number): Promise<GameDetail> => {
+  const response = await fetch(`${API_URL}/game?id=${id}`, { headers });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch game details");
   }
 
   return response.json();
